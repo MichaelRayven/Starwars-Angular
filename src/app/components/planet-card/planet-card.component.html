@@ -1,0 +1,12 @@
+<div class="card-wrapper">
+    <h3>{{planet.name}}</h3>
+    <div class="card-column">
+        <p>Population: {{planet.population}}</p>
+        <p>Climate: {{planet.climate}}</p>
+    </div>
+    <div class="card-column">
+        <p>Terrain: {{planet.terrain}}</p>
+        <p>Surface water: {{planet.surface_water}}</p>
+    </div>
+    <button [routerLink]="['planet', planetId]" class="btn">Learn more</button>
+</div>

@@ -1,0 +1,100 @@
+@import "../../variables";
+
+.card-wrapper {
+  display: flex;
+  align-items: center;
+  row-gap: 0.2rem;
+
+  max-width: auto;
+  padding: 2rem 4rem;
+
+  border-radius: 1rem;
+  box-shadow: 0px 0px 0.8rem darken($on-primary-color, 50);
+
+  background: $primary-color;
+  font-family: "Lato";
+  font-weight: 700;
+  color: $on-primary-color;
+
+  & p {
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+
+  & h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-right: 4rem;
+  }
+
+  & button {
+    background-color: $secondary-color;
+    box-shadow: 0px 0px 1rem 0.1rem $secondary-color;
+    color: $on-primary-color;
+
+    margin-left: auto;
+    min-width: max-content;
+
+    &:hover {
+      background-color: darken($secondary-color, 2%);
+    }
+
+    &:active {
+      background-color: darken($secondary-color, 5%);
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .card-wrapper {
+    padding: 1rem 2rem;
+
+    & h3 {
+      margin-right: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  // .card-wrapper {
+  //     display: grid;
+  //     justify-items: center;
+  //     padding: 1rem;
+  //     grid-template-columns: repeat(2, 1fr);
+  //     grid-template-rows: auto;
+  //     grid-template-areas:
+  //         "header header"
+  //         "column-info-left column-info-right"
+  //         "button button"
+  //     ;
+  //     row-gap: 1rem;
+
+  //     & h3 {
+  //         grid-area: header;
+  //     }
+
+  //     & button {
+  //         margin: 0 auto;
+  //         grid-area: button;
+  //     }
+  // }
+
+  .card-wrapper {
+    flex-direction: column;
+    row-gap: 1rem;
+
+    & .card-column {
+      margin-right: auto;
+    }
+
+    & button {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card-wrapper {
+    border-radius: 0;
+  }
+}

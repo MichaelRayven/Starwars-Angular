@@ -1,0 +1,76 @@
+<div class="planet-info" *ngIf="planet">
+    <div class="planet-info__header">
+        <h3>{{planet.name}}</h3>
+        <button routerLink="/" class="btn">Go Back</button>
+    </div>
+
+    <div class="planet-info__inner">
+        <div class="planet-info__column">
+            <p>Rotation period:</p>
+            <p>
+                {{planet.rotation_period}} <span *ngIf="planet.rotation_period != 'unknown'">hours</span>
+            </p>
+        </div>
+        <div class="planet-info__column">
+            <p>Orbital period:</p>
+            <p>
+                {{planet.orbital_period}} <span *ngIf="planet.rotation_period != 'unknown'">days</span>
+            </p>
+        </div>
+        <div class="planet-info__column">
+            <p>Gravity:</p>
+            <p>{{planet.gravity}}</p>
+        </div>
+        <div class="planet-info__column">
+            <p>Population:</p>
+            <p>
+                {{planet.population}} <span *ngIf="planet.rotation_period != 'unknown'">beings</span>
+            </p>
+        </div>
+        <div class="planet-info__column">
+            <p>Climate:</p>
+            <p>{{planet.climate}}</p>
+        </div>
+        <div class="planet-info__column">
+            <p>Terrain:</p>
+            <p>{{planet.terrain}}</p>
+        </div>
+        <div class="planet-info__column">
+            <p>Surface water:</p>
+            <p>
+                {{planet.surface_water }} <span *ngIf="planet.rotation_period != 'unknown'">%</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="planet-info__list" *ngIf="planet.residents.length !== 0">
+            <h4 class="planet-info__list-header">Residents:</h4>
+            <div class="planet-info__list-items">
+                <p *ngFor="let resident of planet.residents">
+                    {{resident.name}}
+                </p>
+            </div>
+    </div>
+
+    <div class="planet-info__list" *ngIf="planet.films.length !== 0">
+        <h4 class="planet-info__list-header">Films:</h4>
+        <div class="planet-info__list-items">
+            <p *ngFor="let film of planet.films">
+                {{film.title}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="planet-info" *ngIf="planet === null">
+    <div class="planet-info__header">
+        <h3>Error: Something went wrong</h3>
+        <button routerLink="/" class="btn">Go Back</button>
+    </div>
+</div>
+
+<div class="planet-info" *ngIf="planet === undefined">
+    <div class="planet-info__loading">
+        <fa-icon [icon]="faSpinner"></fa-icon>
+    </div>
+</div>

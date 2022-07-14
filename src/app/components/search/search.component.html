@@ -1,0 +1,17 @@
+<div class="search">
+    <fa-icon class="search-icon" [icon]="faSearch"></fa-icon>
+    <input 
+        class="search-input" 
+        type="text" 
+        name="text" 
+        id="text" 
+        placeholder="Search..." 
+        [(ngModel)]="text"
+        (input)="onTextChange()"
+    >
+    <fa-icon class="clear-icon" [icon]="faTimes" [ngClass]="{'active': text !== ''}" (click)="clearInput()"></fa-icon>
+
+    <div class="search-results noselect" *ngIf="searchResults.length">
+        <app-search-result *ngFor="let planet of searchResults" [displayText]="planet.name" [id]="getPlanetId(planet.url)" (resultClick)="resultClick($event)"></app-search-result>
+    </div>
+</div>

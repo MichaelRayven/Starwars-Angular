@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Lato';
+    font-weight: 400;
+
+    background-image: url('/assets/main-bg.svg');
+    background-repeat: repeat-y;
+    background-position: center/center;
+}
+
+@font-face {
+    font-family: 'Star Wars';
+    src: url(assets/fonts/SfDistantGalaxy-0l3d.ttf);
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-weight: 400;
+    src: url(assets/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-weight: 700;
+    src: url(assets/fonts/Lato-Bold.ttf);
+}
+
+.btn {
+    outline: none;
+    border: none;
+
+    font-weight: 700;
+    font-size: 1.2rem;
+
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    width: max-content;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+  @media screen and (max-width: 1260px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .btn {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        font-size: 12px;
+    }
+}
